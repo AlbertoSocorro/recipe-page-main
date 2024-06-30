@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: young-serif;
+    src: url(assets/fonts/young-serif/YoungSerif-Regular.ttf);
+}
+
+@font-face {
+    font-family: Outfit;
+    src: url(assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+}
+
+:root {
+    --clr-nutmeg: hsl(14, 45%, 36%);
+    --clr-darkRaspberry: hsl(332, 51%, 32%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-roseWhite: hsl(330, 100%, 98%);
+    --clr-eggShell: hsl(30, 54%, 90%);
+    --clr-lightGrey: hsl(30, 18%, 87%);
+    --clr-wengeBrown: hsl(30, 10%, 34%);
+    --clr-darkCharcoal: hsl(24, 5%, 18%);
+
+    --fs-par: 16px;
+
+    --ff-title: Outfit;
+    --ff-par: young-serif;
+
+    --fw-regular: 400;
+    --fw-mediumBold: 600;
+    --fw-bold: 700;
+}
+
+body {
+    background-color: var(--clr-eggShell);
+}
+
+.container {
+    max-width: 100%;
+    width: 700px;
+    margin: 100px auto 100px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: var(--clr-white);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.container .thumbnail {
+    border-radius: 10px;
+}
+
+.container article {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.container .prep {
+    background-color: var(--clr-roseWhite);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    > ul {
+        list-style: circle;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+    }
+}
+
+
+
+.container .nutrition {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container .nutrition .nutrition-table {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container .nutrition .nutrition-table .linea {
+    height: 1px;
+    background-color: var(--clr-eggShell);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        gap: 0;
+    }
+
+    .container .thumbnail {
+        border-radius: 0;
+    }
+
+    .container article {
+        padding: 25px;
+    }
+}
