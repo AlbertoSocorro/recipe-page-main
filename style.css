@@ -22,8 +22,8 @@
 
     --fs-par: 16px;
 
-    --ff-title: Outfit;
-    --ff-par: young-serif;
+    --ff-par: Outfit;
+    --ff-title: young-serif;
 
     --fw-regular: 400;
     --fw-mediumBold: 600;
@@ -32,6 +32,73 @@
 
 body {
     background-color: var(--clr-eggShell);
+    font-family: var(--ff-par);
+    color: var(--clr-wengeBrown);
+}
+
+h1 {
+    font-family: var(--ff-title);
+    font-size: 1.6em;
+    color: #000;
+}
+
+h2 {
+    font-family: var(--ff-title);
+    font-size: 1.3em;
+    color: var(--clr-nutmeg);
+}
+
+p{
+    line-height: 25px;
+}
+
+.prep h2 {
+    color: var(--clr-darkRaspberry);
+}
+
+ul, ol {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+ul li span:nth-child(1) {
+    font-weight: var(--fw-bold)
+}
+
+ol {
+    list-style: decimal;
+    margin-left: 20px;
+    > li {
+        font-weight: var(--fw-bold);
+    }
+}
+
+ul li {
+    line-height: 25px;
+}
+
+ul li::before {
+    content: '•';
+    margin-right: 15px;
+}
+
+ol li {
+    color: var(--clr-nutmeg);
+    font-weight: var(--fw-bold);
+}
+
+li span:nth-child(1) {
+    color: var(--clr-wengeBrown);
+}
+
+li span:nth-child(2) {
+    font-weight: var(--fw-regular);
+    color: var(--clr-wengeBrown);
+}
+
+li p{
+    margin-left: 20px;
 }
 
 .container {
@@ -40,7 +107,7 @@ body {
     margin: 100px auto 100px auto;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 30px;
     background-color: var(--clr-white);
     padding: 30px;
     border-radius: 10px;
@@ -53,7 +120,13 @@ body {
 .container article {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 30px;
+}
+
+.container section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .container .prep {
@@ -63,33 +136,31 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-
-    > ul {
-        list-style: circle;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        
-    }
-}
-
-
-
-.container .nutrition {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
 }
 
 .container .nutrition .nutrition-table {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
 }
 
-.container .nutrition .nutrition-table .linea {
+.nutrition-table .fila {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.nutrition-table .fila .nutrient {
+    margin-left: 20px;
+}
+
+.nutrition-table .nutrient-amount {
+    font-weight: var(--fw-bold);
+    color: var(--clr-nutmeg);
+}
+
+.linea {
     height: 1px;
-    background-color: var(--clr-eggShell);
+    background-color: var(--clr-lightGrey);
 }
 
 @media (max-width: 768px) {
@@ -98,6 +169,7 @@ body {
         padding: 0;
         width: 100%;
         gap: 0;
+        border-radius: 0;
     }
 
     .container .thumbnail {
@@ -105,6 +177,6 @@ body {
     }
 
     .container article {
-        padding: 25px;
+        padding: 30px;
     }
 }
